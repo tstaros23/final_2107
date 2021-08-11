@@ -19,18 +19,17 @@ class Auction
 
   def unpopular_items
 
-    items.map do |item|
-      
-      end
+    items.find_all do |item|
+      item.bids.count == 0
+      # require "pry"; binding.pry
     end
   end
 
   def potential_revenue
     total = 0
-    @items.each do |item|
-    total += item.bids.values.max.to_i
-
-    end
+      @items.each do |item|
+      total += item.bids.values.max.to_i
+      end
     total
   end
 end
