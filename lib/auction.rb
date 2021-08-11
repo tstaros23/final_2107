@@ -32,4 +32,13 @@ class Auction
       end
     total
   end
+
+  def bidders
+    bidders = @items.flat_map do |item|
+      item.bids.map do |attendee, amount|
+        attendee.name
+      end
+    end
+    bidders.uniq
+  end
 end
