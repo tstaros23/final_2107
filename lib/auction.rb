@@ -16,4 +16,21 @@ class Auction
     end
     names
   end
+
+  def unpopular_items
+
+    items.map do |item|
+      
+      end
+    end
+  end
+
+  def potential_revenue
+    total = 0
+    @items.each do |item|
+    total += item.bids.values.max.to_i
+
+    end
+    total
+  end
 end
